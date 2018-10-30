@@ -1,0 +1,877 @@
+// INCLUDES --------------------------------------------------------
+@font-face {
+    font-family: 'luziaregular';
+    src: url('src/fonts/luzia-regular-webfont.woff2') format('woff2'),
+         url('src/fonts/luzia-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'luziaregular';
+    src: url('src/fonts/luzia-regularitalic-webfont.woff2') format('woff2'),
+         url('src/fonts/luzia-regularitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+// GLOBAL Variable --------------------------------------------------------
+$gradient : linear-gradient(to left, #115CEE, #69BEFE); 
+$gradient2 : linear-gradient(45deg, #434343, #696969);
+$gradientbg : linear-gradient(-45deg, #434343, #696969, #434343, #696969);
+$header-color : rgba(72, 134, 248, 0.75);
+$primary-font : "luzia";
+$blue-primary : #277DC0;
+$off-white : #f8f8f8;
+$redish : #E95C67;
+
+
+// GLOBAL Styles --------------------------------------------------------
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+Body {
+    position: relative;
+}
+body#career {
+    .row.jobs {
+    	width: 80%;
+        left: 10%;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        font-family: $primary-font;
+        background: $redish;
+        color:$off-white;
+        text-align:center;
+        padding: 25px;
+        h1,h5,h4 {
+            color:#000000;
+            opacity: 0.5;
+        }
+        p.link {
+            font-size:2em; 
+        }
+        a {
+            color: $off-white;
+            // text-decoration: underline;  
+        }
+        a:hover {
+            color:$off-white;
+            opacity: 1;
+        }
+    }
+}
+section {
+    -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(10%);
+    transition: 0.1s linear;
+    padding: 90px 0px;
+} 
+section:hover {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+.section-title {
+    position:relative;
+    width:100%;
+    height:200px;
+    padding:10px 0px;
+    h1,span,hr {
+        position:absolute;
+        top:0; 
+        font-family: $primary-font;
+    }
+    h1 {
+        left:60px;
+        color: $blue-primary;
+        font-size:3em;
+    }
+    span {
+        left:0;
+        font-size:10em;
+        opacity:0.15;
+        line-height: initial;
+    }
+    hr {
+        border: 2px solid $blue-primary;
+        width: 150px;
+        margin: 0px;
+        top: 105px;
+        left:20px;
+    }
+}
+.section-content {
+     font-family: $primary-font;
+     font-size: 1.2em; 
+     max-width: 80%;
+     opacity: 0.75;
+     :hover {
+         opacity:1;
+     }
+}
+// HEADER Styles --------------------------------------------------------
+header#desktop {
+    display: block;
+    .logo {
+        img {
+            position: fixed;
+            width:125px;
+            top:35px;
+            left:4%;
+        }
+    }  
+    .main_navigation {
+        ul {
+            li {
+                a {
+                    color: #ffffff;
+                }
+                position: relative;
+                display: inline-block;
+                font-family:$primary-font;
+                padding: 0px 25px; 
+                line-height: 75px;
+                font-size: 1.2em;
+                letter-spacing: 1px;
+                cursor: pointer;
+            }
+            li::after {
+                position: absolute;
+                content: "";
+                bottom: 10px;
+                left: 30%;
+                width: 40%;
+                height: 4px;
+                background: white;
+                transition: .1s linear;
+                opacity: 0;
+            }
+            li:hover::after {
+                bottom: 0;
+                opacity: 1;             
+            }
+        }
+    }
+    position: absolute;
+    top:0;
+    width:100%;
+    height:75px;
+    z-index: 2;
+    div#discuss {
+        * {
+            color:#ffffff !important;
+            border-color:#ffffff !important;
+        }
+        position: fixed;
+        width:200px;
+        height: 75px;
+        right:0;
+        border:none;
+        background-color: $redish;
+        color:#ffffff;
+        transition:0.2s ease-out;
+        overflow: hidden;
+        z-index: 99;
+        cursor: pointer;
+        span.close {
+            display: none;
+            right:35px;
+            top:35px;
+            font-family: $primary-font;
+            letter-spacing: 2px;
+            font-size:1.2em;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+        section#write-us {
+            padding-top:100px; 
+            display: none;
+            button {
+                background:#ffffff;
+                color:$redish !important;
+            }
+        }
+        section#write-us::before {
+            background:none;
+        }
+        p {
+            margin: 0;
+            font-family: "luzia";
+            letter-spacing: 1px;
+            font-size: 1.4em;
+            text-align: center;
+            line-height:75px;
+        }
+    }
+    div#discuss.clicked {
+        width:100%;
+        height:100vh;
+        overflow-y: scroll;
+        cursor: initial;
+        section#write-us {
+            display: block;
+        }
+        span.close {
+            display: block;
+            position: fixed;
+            right: 35px;
+            z-index: 999;
+            cursor: pointer;
+            img {
+                width:25px;
+                opacity: 0.75;
+            }
+        }
+    }
+}
+
+header#mobile {
+    display:none;
+}
+// SECTION Cover Styles --------------------------------------------------------
+.particles {
+    position: relative;
+    background: $gradientbg;
+	background-size: 400% 400%;
+    section#cover {
+        position: absolute;
+        top:0;
+        width: 100%;
+        height:100vh;
+        padding: 0;
+        background: transparent;
+        animation-name: background;
+        animation-duration: 2s;
+        .row {
+            margin-bottom: 0;
+            .col.content-wrap {
+                position: relative;
+                height: 100vh;
+                font-family: $primary-font;
+                color:#ffffff;
+                .wrapper {
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                    p {
+                        font-size: 1.4em;
+                        letter-spacing: 1px;
+                    }
+                    button {
+                        border:none;
+                        font-family: $primary-font;
+                        font-size: 1.2em;
+                        background:white;
+                        border-radius:50px;
+                        padding: 15px 35px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .col.img-wrap {
+                position: relative;            
+                height: 100vh;
+                float: right;
+                img {
+                    position: absolute;
+                    width:100%;
+                    top:50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+
+// SECTION About Us Styles --------------------------------------------------------
+
+section#aboutus {
+    .row {
+        .col.content-wrap {
+            padding: 60px 0px;      
+        }
+        .col.img-wrap {
+            position: relative;
+            .wrapper {
+                position: absolute;
+                background-image: url('../img/about2.png');
+                background-position: center center;
+                background-size: cover;
+                margin-top:145px;
+                width:80%;
+                height:350px;
+                z-index: 99;
+                box-shadow: 0px 0px 10px rgba(0,0,0, 0.25);
+            }
+            .wrapper-before {
+                position: absolute;
+                margin-top:100px;
+                margin-left:-45px;
+                width:80%;
+                height:350px;
+                border:4px solid $blue-primary;
+                z-index: -1;                
+            }
+        }
+    }
+}
+
+// SECTION How It Works Us Styles --------------------------------------------------------
+
+section#howitwork {
+        .row.steps{
+            opacity: 0.65;
+            transition: 0.1s linear;
+            font-size: 1.2em;
+            font-family: $primary-font;
+            cursor: pointer;
+            margin-bottom: 60px;
+        img {
+            width: 100%;
+            margin-top: 5%;
+            text-align: center;
+        }
+        .step-content {
+            padding: 2.5% 5%;
+            .step-title {
+                color:$blue-primary;
+            }
+        }
+    }
+    .row.steps:nth-child(odd) {
+        .col.step-img {
+            float:right;
+        }
+        .col.step-content {
+            text-align:right;
+        }
+    }
+    .row.steps:hover {
+        opacity: 1;
+    }
+}
+
+// SECTION Tech we work on Us Styles --------------------------------------------------------
+
+section#tech {
+    background: $off-white;
+    .row {
+        .technology {
+            font-family: $primary-font;
+            margin:15px 0px;
+            h4.title {
+                color:$blue-primary;
+                letter-spacing: 2px;
+                font-size: 2em;
+            }
+            p.desc {
+                position: relative;
+                font-size: 1.2em;
+                transition: 0.1s linear;
+                opacity: 0.5;
+            }
+            img {
+                width:100px; 
+                height:100px;
+            }
+            span.readmore-show {
+                position: absolute;
+                right:15px;
+                bottom:-25px;
+                color:red;
+            }
+        }
+        .technology:hover {
+            p.desc {
+                opacity: 0.75;
+            } 
+        }
+    }
+}
+
+// SECTION Tech we work on Us Styles --------------------------------------------------------
+
+section#custom-project {
+    background: $gradient;
+    font-family: $primary-font;
+    text-align:center;
+    p {
+        color:#ffffff;
+        font-size: 1.4em;
+        letter-spacing: 1px;
+        line-height: 2;
+    }
+    button {
+        margin-top:30px;
+        cursor:pointer;
+        position: relative;
+        font-family: $primary-font;
+        color: $blue-primary;
+        border:none;
+        background:#ffffff;
+        height: 50px;
+        width: 275px;
+        font-size: 1.2em;
+        transition: 0.1s linear;
+        span {
+            position: absolute;
+            background: $blue-primary;
+            height: 60px;
+            width:60px;
+            top:-5px;
+            right:-55px;
+            transition: 0.2s linear;        
+            img {
+                height:20px;
+                margin-top: 20px;
+                line-height: 60px;
+            }
+        }
+    }
+    button:hover {
+        background:$blue-primary;
+        color: #ffffff; 
+        span {
+            background: darken($blue-primary, 10%);
+            right:-45px;
+        }   
+    }
+}
+
+section#write-us {
+    position: relative;
+    z-index: 9;
+    padding-top:0;
+    width: 60%;
+    margin:0px 20%;
+    .contact-form {
+        * {
+            font-family: $primary-font;
+        }
+        .input-field {
+            margin-bottom: 3rem !important;
+        }
+        input:focus,
+        textarea:focus {
+            border-color: $blue-primary;
+        }
+        .input-field>label:not(.label-icon).active {
+            transform: translateY(-23px) scale(0.8);
+        }
+        label {
+            color:$blue-primary;
+            font-size: 1.6em;
+        }
+    }
+    .col.s12 {
+        text-align: center;
+        button {
+            font-size: 1.4em;
+            border:none;
+            background: $blue-primary;
+            padding:15px 45px;
+            color:#ffffff;
+            box-shadow:0px 0px 10px rgba(0,0,0,0.15);
+            transition: 0.1s linear;
+            cursor: pointer;
+        }
+        button:hover {
+            box-shadow:5px 5px 10px rgba(0,0,0,0.15);
+        }
+    }
+}
+section#write-us::before {
+    position: absolute;
+    background: url(../img/curve.png);
+    content: "";
+    top: -185px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+section#team {
+    .team-member {
+        cursor:pointer;
+        position: relative;
+        font-family: $primary-font;
+        margin-bottom:60px;
+        span {
+            position: absolute;
+            z-index: 99;
+            opacity: 0.25;
+            left:-5px;
+            top:-15px;
+            font-size:3em;
+        }
+        .teampicture {
+            img {
+                transition: 0.2s linear;
+                width:100%;
+                filter: grayscale(100%);
+                opacity: 0.75;
+            }
+        }
+        h4.name {
+            margin-top: 4px;
+            margin-bottom:0px;
+            opacity: 0.5;
+            transition: 0.2s linear;   
+        }
+        h6.state {
+            margin: 4px 0px;            
+            font-style: italic;
+            opacity: 0.5;
+            transition: 0.2s linear;
+        }
+    }
+    .team-member:hover {
+        .teampicture {
+            img {
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        }
+        h4.name {
+            opacity: 1;
+        }
+        h6.state {
+            opacity: 0.5;
+
+        }
+    }
+    .team-member:hover + {
+        opacity: 0.25;
+    }
+}
+footer {
+    background: $gradient2;
+    font-family: $primary-font;
+    text-align: center;
+    color:#ffffff;
+    padding: 10px;
+    ul {
+        text-align: center;
+        li {
+            display: inline-block;
+            margin: 5px 10px;
+            img {
+                width:25px;
+            }
+        }
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+    body {
+        padding-bottom: 60px; 
+    }
+    .section-title {
+        h1 {
+            font-size:2em;
+            top:18px;
+        }
+    }
+    header#desktop {
+        display: none;
+    }
+    header#mobile {
+        .logo {
+            img {
+                position: absolute;
+                z-index: 9;
+                top: 40px;
+                width: 30%;
+                left: 35%;
+            }
+        } 
+        display: block;
+        .nav-trigger {
+            position: relative;
+            
+            .icon {
+                background: $blue-primary;
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                right:25px;
+                top:25px;
+                z-index: 100;
+                span {
+                    position: absolute;
+                    background:#ffffff;                    
+                    width:40px;
+                    height: 2px;
+                    left: 10px;
+                    transition: 0.2s linear;      
+                }
+                span:nth-child(1) {
+                    top:17px;
+                }
+                span:nth-child(2) {
+                    top:29px;
+                }
+                span:nth-child(3) {
+                    top:41px;
+                }
+            }
+        } 
+        .nav-trigger.cross {
+            .icon {
+                span:nth-child(1) {
+                    top:30px;
+                    transform: rotate(45deg);
+                }
+                span:nth-child(2) {
+                    opacity:0;
+                }
+                span:nth-child(3) {
+                    top:30px;
+                    transform: rotate(-45deg);                    
+                }
+            }
+        } 
+        .main_navigation.open {
+            left: 0;
+        }     
+        .main_navigation {
+            position: fixed;
+            background: $gradient2;
+            z-index: 99;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            transition: 0.2s linear;
+            ul {
+                margin-top: 60px;
+                li {
+                    a {
+                        color: #ffffff;
+                    }
+                    font-family:$primary-font;
+                    padding: 0px 25px; 
+                    line-height: 75px;
+                    font-size: 1.2em;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        div#discuss {
+            .section-title {
+                display: none;
+            }
+            section#write-us {
+                width:80%;
+                margin: 0px 10%;
+                .textarea .input-field > label:not(.label-icon).active {
+                    transform: translateY(-40px) scale(0.8);
+                }
+                .col {
+                    
+                    button {
+                        font-size:1.2em;
+                    }
+                }
+            }
+            * {
+                color:#ffffff !important;
+                border-color:#ffffff !important;
+            }
+            position: fixed;
+            width:100%;
+            height: 75px;
+            left:0;
+            bottom:0;
+            border:none;
+            background-color: $redish;
+            color:#ffffff;
+            transition:0.2s ease-out;
+            overflow: hidden;
+            z-index: 99;
+            cursor: pointer;
+            span.close {
+                display: none;
+                right:30px;
+                top:10px;
+                font-family: $primary-font;
+                letter-spacing: 2px;
+                font-size:1.2em;
+                text-decoration: underline;
+                text-transform: uppercase;
+            }
+            section#write-us {
+                padding-top:100px; 
+                display: none;
+                button {
+                    background:#ffffff;
+                    color:$redish !important;
+                }
+            }
+            section#write-us::before {
+                background:none;
+            }
+            p {
+                margin: 0;
+                font-family: "luzia";
+                letter-spacing: 1px;
+                font-size: 1.4em;
+                text-align: center;
+                line-height:75px;
+            }
+        }
+        div#discuss.clicked {
+            width:100%;
+            height:100vh;
+            cursor: initial;
+            section#write-us {
+                display: block;
+            }
+            span.close {
+                display: block;
+                position: absolute;
+                z-index: 999;
+                cursor: pointer;
+                img {
+                    width:25px;
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+    section {
+        padding: 15px 0px;
+    }
+
+    .particles {
+        top:-20px;
+        height: 80vh;
+        background: $gradient;
+        section#cover {
+            .row { 
+                padding:90px 0px;
+                .col.content-wrap {
+                    text-align: center;
+                    position: static; 
+                    height: auto;
+                    h4 {
+                        font-size: 1.4em;
+                    }
+                    h1 {
+                        font-size: 3em;
+                    }
+                    .wrapper {
+                        position: absolute;
+                        top:40vh;
+                        left:0;
+                        transform: translateY(-50%);  
+                        button {
+                            width:80%;
+                            font-size:1.6em;
+                            margin-top:25px;
+                            color: $blue-primary;
+                        }                 
+                    }
+                }
+                .col.img-wrap {
+                    display:none;
+                }
+            }
+            
+        }
+    }
+    
+    section#aboutus {
+        .row {
+            .col.content-wrap {
+                padding: 0;
+            }
+        }
+        .img-wrap {
+            display: none;
+        }
+        .section-content {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+    section#howitwork {
+        .row.steps {
+            text-align: center;
+            .step-img {
+                float:initial;
+            }
+        }
+        .row.steps:nth-child(odd) {
+            .col.step-img {
+            float: none;
+            text-align: center;             
+            }
+            .col.step-content {
+                text-align: center;
+            }
+            float: none;
+        }
+    }
+    section#tech {
+        text-align: center;
+        .row {
+            .technology {
+                p.desc {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    section#custom-project {
+        button {
+            span {
+                display: none;
+            }
+        }
+    }
+}
+  
+  #loaderwrapper {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: $gradient;
+  }
+  
+  .loader {
+    position: relative;
+    display: block;
+    width: 65px;
+    height: 28px;
+  }
+  
+  .loader::before,
+  .loader::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-primary-500);
+    border-radius: 50%;
+    offset-path: path("M23.71 5.21l17.58 17.58a12.43 12.43 0 0 0 17.57 0 12.43 12.43 0 0 0 0-17.57 12.43 12.43 0 0 0-17.57 0L23.71 22.79a12.43 12.43 0 0 1-17.57 0 12.43 12.43 0 0 1 0-17.57 12.43 12.43 0 0 1 17.57-.01z");
+    animation: loader 1500ms cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+    content: "";
+  }
+  
+  .loader::after {
+    animation-delay: 100ms;
+  }
+  
+  @keyframes loader {
+    0% { offset-distance: 0%; }
+    100% { offset-distance: 100%; }
+  }
+

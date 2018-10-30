@@ -1,0 +1,359 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vevsa Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</head>
+<body>
+    <div id="loaderwrapper">
+        <div class="loader"></div>
+    </div>
+    <header id="desktop">
+        <a href="index.html"><div class="logo"></div></a>
+        <div id="discuss">
+            <span class="close"><img src="src/img/cross.png" alt=""></span>
+            <p>Lets Discuss</p>
+            <div class="formpopup">
+                <section id="write-us">
+                    <div class="container">
+                        <div class="row">
+                            <div class="section-title">
+                                <h1>Lets Discuss</h1>
+                                <hr>
+                                <span>00</span>
+                            </div>
+                        </div>
+                        <div class="row contact-form">
+                            <div class="col m12 s12">
+                                <div class="input-field">
+                                    <input placeholder="Your Name" id="name" type="text" class="validate">
+                                    <label for="name">Name</label>
+                                </div>
+                                <div class="input-field">
+                                    <input placeholder="Your Name" id="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="col m12 s12">
+                                <div class="input-field">
+                                    <textarea placeholder="Write Your Message here" rows="20" id="message" class="materialize-textarea"></textarea>
+                                    <label for="message">Your Message</label>
+                                </div>
+                            </div>
+                            <div class="col s12">
+                                <button onclick="sendMail()">We'll get back to you</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="co s12">
+                    <div class="main_navigation">
+                        <ul>
+                                <li><a href="#aboutus"> About us</a></li>
+                                <li><a href="careers.html"> Careers</a></li>
+                                <li><a href="https://github.com/vevsatechnologies" target="_blank"> Github</a></li>
+                            <!-- <li><a href=""> Blog</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header id="mobile">
+        <div class="container">
+            <div class="row">
+                <div class="co s12">
+                    <div class="nav-trigger">
+                        <div class="icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="logo">
+                    </div>
+                    <div class="main_navigation">
+                        <ul>
+                                <li><a href=""> About us</a></li>
+                                <li><a href="/careers.html" target="_blank"> Careers</a></li>
+                                <li><a href="https://github.com/vevsatechnologies" target="_blank"> Github</a></li>
+                            <li>
+                                <div id="discuss">
+                                    <span class="close"><img src="src/img/cross.png" alt=""></span>
+                                    <p>Lets Discuss</p>
+                                    <div class="formpopup">
+                                        <section id="write-us">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="section-title">
+                                                        <h1>Lets Discuss</h1>
+                                                        <hr>
+                                                        <span>00</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row contact-form">
+                                                    <div class="col m12 s12">
+                                                        <div class="input-field">
+                                                            <input placeholder="Your Name" id="name" type="text" class="validate">
+                                                            <label for="name">Name</label>
+                                                        </div>
+                                                        <div class="input-field">
+                                                            <input placeholder="Your Name" id="email" type="email" class="validate">
+                                                            <label for="email">Email</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col m12 s12 textarea">
+                                                        <div class="input-field">
+                                                            <textarea placeholder="Write Your Message here" rows="20" id="message" class="materialize-textarea"></textarea>
+                                                            <label for="message">Your Message</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col s12">
+                                                        <button>We'll get back to you</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="particles-js" class="particles">
+        <section id="cover">
+            <div class="container">
+                <div class="row">
+                    <div class="col m6 img-wrap">
+                        <img src="src/img/bgnew.png" alt="">
+                    </div>
+                    <div class="col m6 content-wrap">
+                        <div class="wrapper">
+                            <h1>Let's Create <br> Digital Emotions </h1>
+                            <!-- <h1>With Knowledge, <br> Passion, Heart & Soul</h1> -->
+                            <span></span>
+                            <p><i>"Just like nature, technology has a power to change, mold and transform."</i> </p>
+                            <button id="discuss">Lets Get Started</button>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+
+    <section id="aboutus">
+        <div class="container">
+            <div class="row">
+                <div class="col m6 content-wrap">
+                    <div class="section-title">
+                        <h1>About Us</h1>
+                        <hr>
+                        <span>1</span>
+                    </div>
+                    <div class="section-content">
+                        <p>We are a team of Young minds from India (Chandigarh) with a vision to make great products. Back in our minds and hearts we are clear that we are here to push the human race forward. <br><br> Let us focus on your technical requirements, so that you can focus on the other ones.</p>
+                    </div>
+                </div>
+                <div class="col m6 img-wrap">
+                    <div class="wrapper-before"></div>
+                    <div class="wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="howitwork">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h1>How Things work here</h1>
+                    <hr>
+                    <span>2</span>
+                </div>
+                <div class="row steps">
+                    <div class="col step-img m3">
+                        <img src="src/img/wireframe.png" alt="">
+                    </div>
+                    <div class="col step-content m9">
+                        <p class="step-title">Wireframe</p>
+                        <p class="step-desc">Wireframing is an important step in any screen design process. It primarily allows you to define the information hierarchy of your design, making it easier for you to plan the layout according to how you want your user to process the information.</p>
+                    </div>
+                </div>
+                <div class="row steps">
+                    <div class="col step-img m3">
+                        <img src="src/img/design.png" alt="">
+                    </div>
+                    <div class="col step-content m9">
+                        <p class="step-title">Design</p>
+                        <p class="step-desc">Prototyping is essential for resolving usability issues before launch. It can also reveal areas that need improvement. Once a draft of your product idea is in the hands of real users, you’ll finally see how they want to use the product. You can then go back and adjust your initial guesswork.</p>
+                    </div>
+                </div>
+                <div class="row steps">
+                    <div class="col step-img m3">
+                        <img src="src/img/develop.png" alt="">
+                    </div>
+                    <div class="col step-content m9">
+                        <p class="step-title">Development</p>
+                        <p class="step-desc">Time line agreement, resource allocation, back-end architecture, app architecture, launch strategy and branding strategy. All the boring things down into one strategic plan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h1>Tech we work on</h1>
+                    <hr>
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m4 technology">
+                    <img src="src/img/blockchain.png" alt="">
+                    <h4 class="title">Blockchain</h4>
+                    <!-- <p class="desc">We, at Vevsa Technologies, has carved a niche in the field of blockchain app development by creating, deploying custom decentralized blockchain application and infrastructure support to be fast forward your business to get ahead of your rivals. Find a perfect blockchain technology solution for diverse industries to create a fast, secure and transparent identity for your business.</p> -->
+                    <p class="desc" data-readmore data-readmore-options='{"grouping":"word", "limit":"40"}'>We, at Vevsa Technologies, has carved a niche in the field of blockchain app development by creating, deploying custom decentralized blockchain application and infrastructure support to be fast forward your business to get ahead of your rivals. Find a perfect blockchain technology solution for diverse industries to create a fast, secure and transparent identity for your business.</p>
+                </div>
+                <div class="col m4 technology">
+                    <img src="src/img/kuber.png" alt="">
+                    <h4 class="title">Kubernetes</h4>
+                    <p class="desc"></p>
+                    <p class="desc" data-readmore data-readmore-options='{"grouping":"word", "limit":"50"}'>A container strategy defines the long-term goals for containerization, the impact on application architectures, integration with IT operating models and application development practices (DevOps). 
+                    A container architecture implements the platform aspect of a container strategy, and establishes the principles, patterns, capabilities, components and products that are desirable.</p>
+                </div>
+                <div class="col m4 technology">
+                    <img src="src/img/docker.png" alt="">
+                    <h4 class="title">Docker</h4>
+                    <p class="desc" >To help you with container and container platform adoption, we provide a number of docker and Kubernetes services including advisory consulting. Let us help bootstrap enablement with best practices and expertise gained across multiple production deployments.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m4 technology">
+                    <img src="src/img/react.png" alt="">
+                    <h4 class="title">React Js / React Native</h4>
+                    <p class="desc">Build cross-platform applications for IOS and Android with efficiency and Speed with the help of React Native Development Company. React Native is a Javascript framework composes rich mobile UI from Declarative components</p>
+                </div>
+                <div class="col m4 technology">
+                    <img src="src/img/node.png" alt="">
+                    <h4 class="title">Node JS</h4>
+                    <p class="desc" data-readmore data-readmore-options='{"grouping":"word", "limit":"40"}'>Featuring its specialty as a Node.js web & mobile application development company, Vevsa Technologies is gaining the lead as a service provider. Node.js is proving its worth as a perfect technology partner to be used by software architects. Moreover, our Node.js developers also hold the expertise in scaling the features of applications while providing Node.js development services.</p>
+                </div>
+                <div class="col m4 technology">
+                    <img src="src/img/shield.png" alt="">
+                    <h4 class="title">Security</h4>
+                    <p class="desc" data-readmore data-readmore-options='{"grouping":"word", "limit":"40"}'>Devising data protection strategies in the age of the iPad and malicious insiders is challenging and requires highly skilled professionals to conceptualize and deploy end-to-end data security. We help create a roadmap for enterprises, offering various engagement models that optimally uses IT security solutions to achieve maximum protection against data breaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="custom-project">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <p>You don't have to work for any of this. Rather, we'll do it for you, as per the details you provide. Merge your details here at VEVSA, and receive a product with the finishing you require.</p>
+                    <a href="mailto:support@vevsa.com"><button>Request a custom project <span><img src="src/img/arrow.png" alt=""></span></button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="team">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h1>Our Team</h1>
+                    <hr>
+                    <span>4</span>
+                </div>
+                <div class="col m4">
+                </div>
+                <div class="col m8">
+                    <div class="row">
+                        <!-- <div class="col m4 team-member"></div> -->
+                        <div class="col m4 team-member">
+                            <span>01</span>
+                            <div class="teampicture">
+                                <img src="src/img/team/3.png" alt="">
+                            </div>
+                            <h5 class="name">Rajat Dhiman</h5>
+                            <h6 class="state">Co-Founder</h6>
+                        </div>
+                        <div class="col m4 team-member">
+                            <span>02</span>
+                            <div class="teampicture">
+                                <img src="src/img/team/1.png" alt="">
+                            </div>
+                            <h5 class="name">Tarun Gupta</h5>
+                            <h6 class="state">Co-Founder</h6>
+                        </div>
+                        <div class="col m4 team-member">
+                            <span>03</span>
+                            <div class="teampicture">
+                                <img src="src/img/team/4.png" alt="">
+                            </div>
+                            <h5 class="name">Vishal Behal</h5>
+                            <h6 class="state">UI/UX Developer</h6>
+                        </div>
+                        <div class="col m4 team-member">
+                            <span>04</span>
+                            <div class="teampicture">
+                                <img src="src/img/team/2.png" alt="">
+                            </div>
+                            <h5 class="name">Alisha Gupta</h5>
+                            <h6 class="state">Full-Stack Developer</h6>
+                        </div>
+                        <div class="col m4 team-member">
+                            <span>05</span>
+                            <div class="teampicture">
+                                <img src="src/img/team/5.png" alt="">
+                            </div>
+                            <h5 class="name">Gagan Taneja</h5>
+                            <h6 class="state">Full-Stack Developer</h6>
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Copyright Vevsa Technologies | All right Reserved @2018</p>
+        <ul>
+            <li><a href="https://github.com/vevsatechnologies"><span class="social"><img src="src/img/social/github.png" alt=""></span></a></li>
+            <li><a href="https://in.linkedin.com/company/vevsa-technologies"><span class="social"><img src="src/img/social/linkedin.png" alt=""></span></a></li>
+            <li><a href="https://twitter.com/vevsabooks?lang=en"><span class="social"><img src="src/img/social/twitter.png" alt=""></span></a></li>
+            <li><a href="https://medium.com/"><span class="social"><img src="src/img/social/medium.png" alt=""></span></a></li>
+            <li><a href="https://www.facebook.com/vevsatech/"><span class="social"><img src="src/img/social/facebook.png" alt=""></span></a></li>
+            <!-- <li><span class="social"><img src="src/img/social/medium.png" alt=""></span></li>?\ -->
+        </ul>
+    </footer>
+
+</body>
+<script  src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script  src="bower_components/particles.js/particles.min.js"></script>
+<script  src="http://matthew.wagerfield.com/parallax/deploy/jquery.parallax.js"></script>
+<script  src="src/js/script.js"></script>
+
+</html>
